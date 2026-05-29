@@ -1080,10 +1080,38 @@ function rSup(){
 
 /* ===================== المخازن ===================== */
 function rInv(){
-  document.getElementById('invT').innerHTML=DB.inventory.length?DB.inventory.map(function(i){return '<tr><td style="color:var(--acc)">'+i.id+'</td><td>'+i.name+'</td><td>'+i.cat+'</td><td>'+i.qty+'</td><td>'+i.min+'</td><td>'+(i.qty<i.min?'<span class="bg bg-er">منخفض</span>':'<span class="bg bg-ok">متوفر</span>')+'</td><td><button class="ib" onclick="toast(\'تعديل الصنف\',\'in\')"><i class="fas fa-edit"></i></button></td></tr>'}).join(''):'<tr><td colspan="7"><div class="emt"><i class="fas fa-inbox"></i></div></td></tr>';
+  document.getElementById('invT').innerHTML=DB.inventory.length?DB.inventory.map(function(i){return '<tr><td style="color:var(--acc)">'+i.id+'</td><td>'+i.name+'</td><td>'+i.cat+'</td><td>'+i.qty+'</td><td>'+i.min+'</td><td>'+(i.qty<i.min?'<span class="bg bg-er">منخفض</span>':'<span class="bg bg-ok">متوفر</span>')+'</td><td><button class="ib" onclick="editItem(\''+i.id+'\')" title="تعديل"><i class="fas fa-edit"></i></button><button class="ib dg" onclick="deleteItem(\''+i.id+'\')" title="حذف"><i class="fas fa-trash"></i></button></td></tr>'}).join(''):'<tr><td colspan="7"><div class="emt"><i class="fas fa-inbox"></i></div></td></tr>';
   var low=DB.inventory.filter(function(i){return i.qty<i.min}).length;
   document.getElementById('invKPI').innerHTML=kpi('fa-warehouse','var(--acc)','var(--accD)',DB.inventory.length,'الأصناف','var(--acc)')+kpi('fa-exclamation-circle','var(--er)','rgba(224,72,72,.07)',low,'منخفض','var(--er)');
-  if(!document.getElementById('invF').innerHTML)document.getElementById('invF').innerHTML=ENG_STAGES.map(function(s){return '<button class="fb" onclick="toast(\''+s.lb+'\',\'in\')">'+s.lb+'</button>'}).join('');
+  document.getElementById('invF').innerHTML='<button class="fb on" onclick="filterInv(\'all\',this)">الكل</button>'+['خامات','أكسسوار','شرائط','دهانات','مواد لاصقة','تغليف','أخرى'].map(function(c){return '<button class="fb" onclick="filterInv(\''+c+'\',this)">'+c+'</button>'}).join('');
+}
+function filterInv(cat,btn){
+  document.querySelectorAll('#invF .fb').forEach(function(b){b.classList.remove('on')});
+  btn.classList.add('on');
+  var rows=document.querySelectorAll('#invT tr');
+  rows.forEach(function(r){var catCell=r.cells&&r.cells[2];if(!catCell)return;r.style.display=(cat==='all'||catCell.textContent===cat)?'':'none'});
+}
+function editItem(id){
+  var itm=DB.inventory.find(function(x){return x.id===id});if(!itm)return;
+  var t=document.getElementById('mTi');var b=document.getElementById('mBd');var f=document.getElementById('mFt');
+  t.textContent='تعديل صنف: '+itm.name;
+  var cats=['خامات','أكسسوار','شرائط','دهانات','مواد لاصقة','تغليف','أخرى'];
+  b.innerHTML='<div class="fbox"><h4><i class="fas fa-box-open"></i> تعديل بيانات الصنف</h4><div class="fr"><div class="fg"><label>اسم الصنف</label><input id="ei_name" value="'+itm.name+'"></div><div class="fg"><label>الفئة</label><select id="ei_cat">'+cats.map(function(c){return '<option'+(c===itm.cat?' selected':'')+'>'+c+'</option>'}).join('')+'</select></div></div><div class="fr"><div class="fg"><label>الكمية</label><input type="number" id="ei_qty" value="'+itm.qty+'"></div><div class="fg"><label>الحد الأدنى</label><input type="number" id="ei_min" value="'+itm.min+'"></div></div><div class="fr"><div class="fg"><label>الوحدة</label><input id="ei_unit" value="'+(itm.unit||'قطعة')+'"></div></div></div>';
+  f.innerHTML='<button class="btn btn-p" onclick="updateItem(\''+id+'\')"><i class="fas fa-check"></i> حفظ التعديلات</button><button class="btn btn-s" onclick="closeMod()">إلغاء</button>';
+  openModal();
+}
+function updateItem(id){
+  var itm=DB.inventory.find(function(x){return x.id===id});if(!itm)return;
+  var n=document.getElementById('ei_name').value;var c=document.getElementById('ei_cat').value;var q=parseInt(document.getElementById('ei_qty').value)||0;var m=parseInt(document.getElementById('ei_min').value)||0;var u=document.getElementById('ei_unit').value||'قطعة';
+  if(!n){toast('أدخل اسم الصنف','er');return}
+  itm.name=n;itm.cat=c;itm.qty=q;itm.min=m;itm.unit=u;
+  logActivity('تعديل صنف',n+' ('+q+')','inventory');closeMod();renderAll();toast('تم تعديل الصنف','ok');
+}
+function deleteItem(id){
+  var itm=DB.inventory.find(function(x){return x.id===id});if(!itm)return;
+  if(!confirm('هل أنت متأكد من حذف الصنف: '+itm.name+'؟'))return;
+  DB.inventory=DB.inventory.filter(function(x){return x.id!==id});
+  logActivity('حذف صنف',itm.name,'inventory');renderAll();toast('تم حذف الصنف','ok');
 }
 
 /* ===================== الموظفين ===================== */
@@ -1523,7 +1551,7 @@ function openMod(type){
     f.innerHTML='<button class="btn btn-p" onclick="saveSupplier()"><i class="fas fa-check"></i> حفظ</button><button class="btn btn-s" onclick="closeMod()">إلغاء</button>';
   }else if(type==='item'){
     t.textContent='إضافة صنف';
-    b.innerHTML='<div class="fbox"><h4><i class="fas fa-box-open"></i> بيانات الصنف</h4><div class="fr"><div class="fg"><label>اسم الصنف</label><input id="ni_name"></div><div class="fg"><label>الفئة</label><select id="ni_cat"><option>خامات</option><option>أكسسوار</option><option>شرائط</option><option>دهانات</option><option>مواد لاصقة</option><option>تغليف</option><option>أخرى</option></select></div></div><div class="fr"><div class="fg"><label>الكمية</label><input type="number" id="ni_qty"></div><div class="fg"><label>الحد الأدنى</label><input type="number" id="ni_min"></div></div></div>';
+    b.innerHTML='<div class="fbox"><h4><i class="fas fa-box-open"></i> بيانات الصنف</h4><div class="fr"><div class="fg"><label>اسم الصنف</label><input id="ni_name"></div><div class="fg"><label>الفئة</label><select id="ni_cat"><option>خامات</option><option>أكسسوار</option><option>شرائط</option><option>دهانات</option><option>مواد لاصقة</option><option>تغليف</option><option>أخرى</option></select></div></div><div class="fr"><div class="fg"><label>الكمية</label><input type="number" id="ni_qty"></div><div class="fg"><label>الحد الأدنى</label><input type="number" id="ni_min"></div></div><div class="fr"><div class="fg"><label>الوحدة</label><input id="ni_unit" value="قطعة"></div></div></div>';
     f.innerHTML='<button class="btn btn-p" onclick="saveItem()"><i class="fas fa-check"></i> حفظ</button><button class="btn btn-s" onclick="closeMod()">إلغاء</button>';
   }else if(type==='employee'){
     t.textContent='إضافة موظف';
@@ -1599,7 +1627,7 @@ function confirmDeleteEmployee(id){var e=DB.employees.find(function(x){return x.
 function saveVisit(){var cn=document.getElementById('nv_cname').value;var cp=document.getElementById('nv_cphone').value;var ce=document.getElementById('nv_cemail').value;var pi=document.getElementById('nv_product').value;var d=document.getElementById('nv_date').value;var s=document.getElementById('nv_stage').value;if(!cn){toast('أدخل اسم العميل','er');return}var now=new Date();var ts=now.getFullYear()+'-'+(now.getMonth()+1).toString().padStart(2,'0')+'-'+now.getDate().toString().padStart(2,'0')+' '+now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');DB.visits.push({id:'V-'+(DB.visits.length+10),date:d,clientName:cn,clientPhone:cp,clientEmail:ce,productInterest:pi,stage:s,stageHistory:[{stage:s,confirmedBy:currentUser?currentUser.name:'النظام',confirmedAt:ts}]});logActivity('تسجيل زيارة',cn+' — '+pi,'visits');closeMod();renderAll();toast('تم تسجيل الزيارة','ok')}
 function saveLead(){var n=document.getElementById('nl_name').value;var p=document.getElementById('nl_phone').value;var s=document.getElementById('nl_src').value;var i=document.getElementById('nl_interest').value;if(!n){toast('أدخل الاسم','er');return}DB.leads.push({id:'L-'+(DB.leads.length+10),name:n,phone:p,source:s,interest:i});logActivity('إضافة محتمل',n,'crm');closeMod();renderAll();toast('تم إضافة المحتمل','ok')}
 function saveSupplier(){var n=document.getElementById('ns_name').value;var s=document.getElementById('ns_spec').value;var p=document.getElementById('ns_phone').value;var c=document.getElementById('ns_city').value;if(!n){toast('أدخل الاسم','er');return}DB.suppliers.push({id:'S-'+(DB.suppliers.length+10),name:n,spec:s,phone:p,city:c});logActivity('إضافة مورد',n,'suppliers');closeMod();renderAll();toast('تم إضافة المورّد','ok')}
-function saveItem(){var n=document.getElementById('ni_name').value;var c=document.getElementById('ni_cat').value;var q=parseInt(document.getElementById('ni_qty').value)||0;var m=parseInt(document.getElementById('ni_min').value)||0;if(!n){toast('أدخل اسم الصنف','er');return}DB.inventory.push({id:'I-'+(DB.inventory.length+10),name:n,cat:c,qty:q,min:m,unit:'قطعة'});logActivity('إضافة صنف',n+' ('+q+')','inventory');closeMod();renderAll();toast('تم إضافة الصنف','ok')}
+function saveItem(){var n=document.getElementById('ni_name').value;var c=document.getElementById('ni_cat').value;var q=parseInt(document.getElementById('ni_qty').value)||0;var m=parseInt(document.getElementById('ni_min').value)||0;var u=document.getElementById('ni_unit').value||'قطعة';if(!n){toast('أدخل اسم الصنف','er');return}DB.inventory.push({id:'I-'+(DB.inventory.length+10),name:n,cat:c,qty:q,min:m,unit:u});logActivity('إضافة صنف',n+' ('+q+')','inventory');closeMod();renderAll();toast('تم إضافة الصنف','ok')}
 function saveEmployee(){var n=document.getElementById('ne_name').value;var p=document.getElementById('ne_pos').value;var d=document.getElementById('ne_dept').value;var s=parseInt(document.getElementById('ne_salary').value)||0;if(!n){toast('أدخل الاسم','er');return}DB.employees.push({id:'E-'+(DB.employees.length+10),name:n,position:p,dept:d,salary:s,status:'نشط'});logActivity('إضافة موظف',n+' — '+p,'hr');closeMod();renderAll();toast('تم إضافة الموظف','ok')}
 function saveAttendance(){var e=document.getElementById('na_emp').value;var d=document.getElementById('na_date').value;var t=document.getElementById('na_in').value;var s=document.getElementById('na_status').value;var ot=document.getElementById('na_overtime').value||'';var dd=document.getElementById('na_deduction').value||'';var dt=document.getElementById('na_deduction_type').value||'';DB.attendance.push({id:'A-'+(DB.attendance.length+10),empName:e,date:d,timeIn:t,timeOut:'',overtime:ot,deduction:dd,deductionType:dt,status:s});logActivity('تسجيل حضور',e+' — '+s,'attendance');closeMod();renderAll();toast('تم تسجيل الحضور','ok')}
 function saveCheckout(){var e=document.getElementById('nco_emp').value;var d=document.getElementById('nco_date').value;var t=document.getElementById('nco_time').value;var ot=document.getElementById('nco_overtime').value||'';var dd=document.getElementById('nco_deduction').value||'';var dt=document.getElementById('nco_deduction_type').value||'';var existing=DB.attendance.find(function(a){return a.empName===e&&a.date===d});if(existing){existing.timeOut=t;if(ot)existing.overtime=ot;if(dd)existing.deduction=dd;if(dt)existing.deductionType=dt;logActivity('تسجيل انصراف',e+' — '+t,'attendance');closeMod();renderAll();toast('تم تسجيل انصراف '+e,'ok')}else{DB.attendance.push({id:'A-'+(DB.attendance.length+10),empName:e,date:d,timeIn:'',timeOut:t,overtime:ot,deduction:dd,deductionType:dt,status:'حاضر'});logActivity('تسجيل انصراف',e+' — '+t,'attendance');closeMod();renderAll();toast('تم تسجيل الانصراف','ok')}}
