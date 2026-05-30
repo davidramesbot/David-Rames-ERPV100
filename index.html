@@ -36,7 +36,6 @@ body{background:var(--bg);color:var(--tx);min-height:100vh}
 .brand{padding:12px 10px 10px;border-bottom:1px solid var(--bdr)}
 .brand-en{font-family:'Playfair Display',serif;font-size:14px;font-weight:900;color:var(--acc);line-height:1.1}
 
-ERROR 404, [30-May-26 7:02 PM]
 .brand-ar{font-size:6px;color:var(--tx2);margin-top:1px}
 .brand-line{height:2px;background:linear-gradient(90deg,var(--acc),transparent);margin-top:5px;opacity:.3;border-radius:1px}
 .snav{flex:1;padding:4px;overflow-y:auto}
@@ -78,7 +77,6 @@ tbody td{padding:4px 6px;border-bottom:1px solid rgba(0,0,0,.06);font-size:8.5px
 tbody tr{transition:.06s;cursor:pointer}tbody tr:hover{background:rgba(0,0,0,.03)}
 tbody tr:last-child td{border-bottom:none}
 
-ERROR 404, [30-May-26 7:02 PM]
 .bg{display:inline-flex;padding:1px 4px;border-radius:2px;font-size:6px;font-weight:600}
 .bg-ok{background:rgba(36,196,144,.06);color:var(--ok)}.bg-er{background:rgba(224,72,72,.06);color:var(--er)}
 .bg-wn{background:rgba(216,176,40,.06);color:var(--wn)}.bg-in{background:rgba(72,144,216,.06);color:var(--in)}
@@ -116,7 +114,6 @@ ERROR 404, [30-May-26 7:02 PM]
 .ni2{display:flex;gap:3px;padding:2px 4px;border-radius:3px;background:var(--bg);margin-bottom:2px;font-size:7px;border:1px solid var(--bdr)}
 .emt{text-align:center;padding:14px 8px;color:var(--tx2)}.emt i{font-size:18px;margin-bottom:4px;opacity:.12;display:block}
 
-ERROR 404, [30-May-26 7:02 PM]
 .fw{display:flex;gap:2px;align-items:flex-end;height:70px;padding:4px 0}
 .fwb{flex:1;border-radius:3px 3px 0 0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px;min-width:24px}
 .fwb span{font-size:6px;font-weight:700;color:#fff}
@@ -152,7 +149,6 @@ ERROR 404, [30-May-26 7:02 PM]
 .ai-pinput{padding:10px 12px;border-top:1px solid var(--bdr);display:flex;gap:6px;background:var(--bg2);border-radius:0 0 12px 12px}
 .ai-pinput input{flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--bdr);background:var(--bg);color:var(--tx);font-size:10px;outline:none;font-family:'Cairo'}
 
-ERROR 404, [30-May-26 7:02 PM]
 .ai-pinput button{width:36px;height:36px;border-radius:8px;border:none;background:linear-gradient(135deg,#7048C0,#9B59B6);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px}
 .ai-quick{display:flex;gap:4px;flex-wrap:wrap;padding:0 12px 8px}
 .ai-quick button{padding:4px 10px;border-radius:12px;border:1px solid var(--bdr);background:var(--bg);color:var(--tx2);font-size:8px;cursor:pointer;font-family:'Cairo'}
@@ -202,7 +198,6 @@ const SB = {
   async login(username, password) {
     const { data, error } = await _supa
 
-ERROR 404, [30-May-26 7:02 PM]
 .from('users')
       .select('*, roles(role_name, permissions)')
       .eq('username', username)
@@ -314,7 +309,6 @@ ERROR 404, [30-May-26 7:02 PM]
     return data;
   },
 
-ERROR 404, [30-May-26 7:02 PM]
 /* --- أوامر التشغيل --- */
   async getWorkOrders() {
     const { data } = await _supa.from('v_work_order_progress').select('*').order('id', { ascending: false });
@@ -408,7 +402,6 @@ function hideSBLoading() {
   <div class="brand"><div class="brand-en">DAVID RAMES ERP</div><div class="brand-ar">ERP & CRM</div><div class="brand-line"></div></div>
   <nav class="snav" id="sideNav">
 
-ERROR 404, [30-May-26 7:02 PM]
 <div class="snl">الرئيسية</div>
     <div class="sni on" data-p="dashboard"><i class="fas fa-th-large"></i>لوحة التحكم</div>
     <div class="snl">CRM</div>
@@ -451,7 +444,6 @@ ERROR 404, [30-May-26 7:02 PM]
     <section class="psec" id="pg-crm"><div class="kg" id="crmKPI"></div><div class="tw"><div class="thd"><h3>بوق المبيعات</h3><div class="tacts" id="crmF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>العميل</th><th>الهاتف</th><th>المرحلة</th><th>القيمة</th><th>إجراء</th></tr></thead><tbody id="crmT"></tbody></table></div></div></section>
     <section class="psec" id="pg-clients"><div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap"><button class="btn btn-p" onclick="openMod('client')"><i class="fas fa-plus"></i>إضافة عميل جديد</button><button class="btn btn-s" onclick="manualSaveAll()"><i class="fas fa-save"></i>حفظ يدوي</button><span id="saveStatus"
 
-ERROR 404, [30-May-26 7:02 PM]
 style="font-size:7px;color:var(--tx3);margin-right:auto;display:flex;align-items:center;gap:3px"><i class="fas fa-circle" style="font-size:5px;color:var(--ok)"></i>الحفظ التلقائي مفعّل</span></div><div class="kg" id="clKPI"></div><div class="tw" style="margin-bottom:6px"><div class="thd"><h3>توزيع العملاء حسب المراحل</h3></div><div style="padding:8px" id="clFunnel"></div></div><div class="tw"><div class="thd"><h3>سجل العملاء مع المراحل</h3><div class="tacts" id="clF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>الاسم</th><th>الهاتف</th><th>المدينة</th><th>المرحلة</th><th>القيمة</th><th>آخر تحديث</th><th>إجراءات</th></tr></thead><tbody id="clT"></tbody></table></div></div></section>
     <section class="psec" id="pg-visits"><div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap"><button class="btn btn-p" onclick="openMod('visit')"><i class="fas fa-plus"></i>تسجيل زيارة</button></div><div class="kg" id="visKPI"></div><div class="tw"><div class="thd"><h3>سجل الزيارات</h3></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>التاريخ</th><th>اسم العميل</th><th>الهاتف</th><th>البريد</th><th>المنتج</th><th>المرحلة</th><th>إجراء</th></tr></thead><tbody id="viT"></tbody></table></div></div></section>
     <section class="psec" id="pg-leads"><div style="display:flex;gap:4px;margin-bottom:8px"><button class="btn btn-p" onclick="openMod('lead')"><i class="fas fa-plus"></i>إضافة محتمل</button></div><div class="tw"><div class="thd"><h3>المحتملون</h3></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>الاسم</th><th>الهاتف</th><th>المصدر</th><th>الاهتمام</th><th>إجراء</th></tr></thead><tbody id="ldT"></tbody></table></div></div></section>
@@ -459,7 +451,6 @@ style="font-size:7px;color:var(--tx3);margin-right:auto;display:flex;align-items
     <section class="psec" id="pg-production"><div class="kg" id="prdKPI"></div><div class="tw"><div class="thd"><h3>الإنتاج</h3><div class="tacts" id="prdF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>العميل</th><th>المنتج</th><th>المرحلة</th><th>التقدم</th><th>إجراء</th></tr></thead><tbody id="prdT"></tbody></table></div></div></section>
     <section class="psec" id="pg-accounts"><div class="kg" id="accKPI"></div><div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap"><button class="btn btn-p" onclick="openMod('custInvoice')"><i class="fas fa-file-invoice"></i> فاتورة عميل جديدة</button></div><div class="tw" style="margin-bottom:8px"><div class="thd"><h3>فواتير العملاء</h3><div class="tacts" id="custInvF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>السريال</th><th>العميل</th><th>البنود</th><th>الإجمالي</th><th>المقدمة</th><th>المتبقي</th><th>الحالة</th><th>التاريخ</th><th>إجراء</th></tr></thead><tbody id="custInvT"></tbody></table></div></div><div class="tw" style="margin-bottom:8px"><div class="thd"><h3>الفواتير البسيطة</h3><div class="tacts" id="accF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>العميل</th><th>المبلغ</th><th>النوع</th><th>الحالة</th><th>التاريخ</th><th>إجراء</th></tr></thead><tbody id="accT"></tbody></table></div></div><div class="ai-rpt-grid" style="margin-top:8px"><div class="tw"><div class="thd"><h3>شجرة الحسابات</h3></div><div style="padding:8px;max-height:250px;overflow-y:auto" id="chartOfAccounts"></div></div><div class="tw"><div class="thd"><h3>القيود المحاسبية</h3></div><div style="padding:8px;max-height:250px;overflow-y:auto" id="journalEntries"></div></div></div><div class="ai-rpt-grid"><div class="tw"><div class="thd"><h3>ميزان المراجعة</h3></div><div style="padding:8px;max-height:200px;overflow-y:auto" id="trialBalance"></div></div><div class="tw"><div class="thd"><h3>قائمة الدخل</h3></div><div style="padding:8px;max-height:200px;overflow-y:auto"
 
-ERROR 404, [30-May-26 7:02 PM]
 id="incomeStatement"></div></div></div></section>
     <section class="psec" id="pg-suppliers"><div style="display:flex;gap:4px;margin-bottom:8px"><button class="btn btn-p" onclick="openMod('supplier')"><i class="fas fa-plus"></i>إضافة مورّد</button></div><div class="tw"><div class="thd"><h3>الموردين</h3></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>الاسم</th><th>التخصص</th><th>الهاتف</th><th>المدينة</th><th>إجراء</th></tr></thead><tbody id="supT"></tbody></table></div></div></section>
     <section class="psec" id="pg-inventory"><div class="kg" id="invKPI"></div><div class="tw"><div class="thd"><h3>المخازن</h3><div class="tacts" id="invF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>الصنف</th><th>الفئة</th><th>الكمية</th><th>الحد الأدنى</th><th>الحالة</th><th>إجراء</th></tr></thead><tbody id="invT"></tbody></table></div></div></section>
@@ -502,7 +493,6 @@ id="incomeStatement"></div></div></div></section>
           <option value="2025-02" selected>فبراير 2025</option>
           <option value="2025-01">يناير 2025</option>
 
-ERROR 404, [30-May-26 7:02 PM]
 </select>
         <button class="btn btn-p" onclick="syncAttendanceToPayroll()"><i class="fas fa-sync-alt"></i> ترحيل ومزامنة أرصدة الحضور والغياب</button>
       </div>
@@ -630,7 +620,6 @@ var DB={
     {code:'1200',name:'العملاء',type:'asset',parent:'1000'},
     {code:'1210',name:'ذمم عملاء',type:'asset',parent:'1200',balance:73950},
 
-ERROR 404, [30-May-26 7:02 PM]
 {code:'1300',name:'المخزون',type:'asset',parent:'1000'},
     {code:'2000',name:'الخصوم',type:'liability',parent:null},
     {code:'2100',name:'الموردون',type:'liability',parent:'2000'},
@@ -693,7 +682,6 @@ function getTimeDiffInMinutes(start, end) {
  * 1. مرتب اليوم = الراتب الأساسي المعرف في ملف الهيئة
  * 2. عدد أيام العمل = مجموع الأيام الحاضرة + الأيام الإضافية
 
-ERROR 404, [30-May-26 7:02 PM]
 * 3. أيام الخصم = أيام الغياب + أيام التأخير (محولة لأيام)
  * 4. إجمالي المرتب = مرتب اليوم × عدد أيام العمل
  * 5. صافي المرتب = إجمالي المرتب - تامينات - مديونية - خصومات - سلف + سداد مديونية + حوافز
@@ -797,7 +785,6 @@ function calculatePayrollData(month) {
       if(adj.debtRepayment !== undefined) debtRepayment=parseFloat(adj.debtRepayment);
     }
 
-ERROR 404, [30-May-26 7:02 PM]
 // ===== التحقق من أرصدة الإجازات =====
     var empLeaves=DB.leaves.filter(function(lv){
       return lv.empName===emp.name && lv.status==='مقبول' && lv.from && lv.to;
@@ -905,7 +892,6 @@ function doLogin(){
 
 function enterApp() {
 
-ERROR 404, [30-May-26 7:02 PM]
 document.getElementById('loginScreen').style.display='none';
   document.getElementById('appScreen').style.display='flex';
   var role = currentUser.role || 'admin';
@@ -1015,7 +1001,6 @@ function saveClientToSupabase(clientObj, isNew) {
 function showErr(m){var e=document.getElementById('loginErr');e.textContent=m;e.style.display='block';setTimeout(function(){e.style.display='none'},4000)}
 function doLogout(){currentUser=null;document.getElementById('loginScreen').style.display='flex';document.getElementById('appScreen').style.display='none';document.getElementById('loginUser').value='';document.getElementById('loginPass').value='';document.getElementById('loginErr').style.display='none'}
 
-ERROR 404, [30-May-26 7:02 PM]
 /* ===================== الصلاحيات والأمان ===================== */
 function hasPerm(p){if(!currentUser)return false;if(currentUser.user==='general')return true;if(currentUser.customPerms)return currentUser.customPerms.indexOf(p)!==-1;return ROLES[currentUser.role].perms.indexOf(p)!==-1}
 function applyPermissions(){
@@ -1057,7 +1042,6 @@ function crmB(s){return '<span class="bg '+(CRM_C[s]||'bg-in')+'">'+s+'</span>'}
 function pbar(p,c){var cl=c||(p>=80?'var(--ok)':p>=40?'var(--acc)':'var(--in)');return '<div style="display:flex;align-items:center;gap:3px"><div class="pb" style="flex:1"><div class="pf" style="width:'+p+'%;background:'+cl+'"></div></div><span style="font-size:7px;color:var(--tx3)">'+Math.round(p)+'%</span></div>'}
 function kpi(ic,co,bg,v,l,gl){return '<div class="kc"><div class="gl" style="background:'+gl+'"></div><div class="ki" style="background:'+bg+';color:'+co+'"><i class="fas '+ic+'"></i></div><div class="kv">'+v+'</div><div class="kl">'+l+'</div></div>'}
 
-ERROR 404, [30-May-26 7:02 PM]
 function toast(m,t){
   t=t||'in';var c=document.getElementById('toastC');
   var e=document.createElement('div');e.className='ti2 t-'+t;
@@ -1138,7 +1122,6 @@ function rPay(){
       '<td><small style="color:var(--ok)">'+p.shiftStart+' - '+p.shiftEnd+'</small></td>' +
       '<td><span class="bg bg-ok">'+p.daysWork+'</span> <span class="bg bg-ac">+'+p.extraDays+'</span> <span class="bg bg-er">-'+p.deductionDays+'</span><br><small style="color:var(--tx3)">صافي: '+p.netWorkDays+' يوم | المستحق: '+p.grossTotal.toLocaleString()+' ر.س</small></td>' +
 
-ERROR 404, [30-May-26 7:02 PM]
 '<td style="color:var(--er)">غياب: '+p.absentDays+'<br>إجازة: '+p.leaveDays+'</td>' +
       '<td style="color:var(--er)">'+p.insurance.toLocaleString()+' ر.س</td>' +
       '<td style="color:var(--er)">'+p.debts.toLocaleString()+' ر.س</td>' +
@@ -1184,7 +1167,6 @@ function openPayrollAdjustMod(empId, month) {
   openModal();
 }
 
-ERROR 404, [30-May-26 7:02 PM]
 function savePayrollAdjustment(empId, month) {
   var insurance = parseFloat(document.getElementById('padj_insurance').value)||0;
   var debts = parseFloat(document.getElementById('padj_debts').value)||0;
