@@ -1,4 +1,4 @@
-
+ERROR 404, [30-May-26 6:20 PM]
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -36,6 +36,8 @@ body{background:var(--bg);color:var(--tx);min-height:100vh}
 .sidebar{width:246px;min-width:246px;background:var(--bg2);border-left:1px solid var(--bdr);display:flex;flex-direction:column;height:100vh;z-index:50}
 .brand{padding:12px 10px 10px;border-bottom:1px solid var(--bdr)}
 .brand-en{font-family:'Playfair Display',serif;font-size:14px;font-weight:900;color:var(--acc);line-height:1.1}
+
+ERROR 404, [30-May-26 6:20 PM]
 .brand-ar{font-size:6px;color:var(--tx2);margin-top:1px}
 .brand-line{height:2px;background:linear-gradient(90deg,var(--acc),transparent);margin-top:5px;opacity:.3;border-radius:1px}
 .snav{flex:1;padding:4px;overflow-y:auto}
@@ -76,6 +78,8 @@ thead th{padding:4px 6px;text-align:right;font-size:7px;color:var(--tx2);font-we
 tbody td{padding:4px 6px;border-bottom:1px solid rgba(0,0,0,.06);font-size:8.5px;white-space:nowrap}
 tbody tr{transition:.06s;cursor:pointer}tbody tr:hover{background:rgba(0,0,0,.03)}
 tbody tr:last-child td{border-bottom:none}
+
+ERROR 404, [30-May-26 6:20 PM]
 .bg{display:inline-flex;padding:1px 4px;border-radius:2px;font-size:6px;font-weight:600}
 .bg-ok{background:rgba(36,196,144,.06);color:var(--ok)}.bg-er{background:rgba(224,72,72,.06);color:var(--er)}
 .bg-wn{background:rgba(216,176,40,.06);color:var(--wn)}.bg-in{background:rgba(72,144,216,.06);color:var(--in)}
@@ -112,6 +116,8 @@ tbody tr:last-child td{border-bottom:none}
 .sr:last-child{border-bottom:none}.sr .sl{color:var(--tx2)}
 .ni2{display:flex;gap:3px;padding:2px 4px;border-radius:3px;background:var(--bg);margin-bottom:2px;font-size:7px;border:1px solid var(--bdr)}
 .emt{text-align:center;padding:14px 8px;color:var(--tx2)}.emt i{font-size:18px;margin-bottom:4px;opacity:.12;display:block}
+
+ERROR 404, [30-May-26 6:20 PM]
 .fw{display:flex;gap:2px;align-items:flex-end;height:70px;padding:4px 0}
 .fwb{flex:1;border-radius:3px 3px 0 0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px;min-width:24px}
 .fwb span{font-size:6px;font-weight:700;color:#fff}
@@ -146,6 +152,8 @@ tbody tr:last-child td{border-bottom:none}
 .ai-msg.user{background:linear-gradient(135deg,#7048C0,#9B59B6);color:#fff;align-self:flex-end;border-bottom-left-radius:2px}
 .ai-pinput{padding:10px 12px;border-top:1px solid var(--bdr);display:flex;gap:6px;background:var(--bg2);border-radius:0 0 12px 12px}
 .ai-pinput input{flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--bdr);background:var(--bg);color:var(--tx);font-size:10px;outline:none;font-family:'Cairo'}
+
+ERROR 404, [30-May-26 6:20 PM]
 .ai-pinput button{width:36px;height:36px;border-radius:8px;border:none;background:linear-gradient(135deg,#7048C0,#9B59B6);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px}
 .ai-quick{display:flex;gap:4px;flex-wrap:wrap;padding:0 12px 8px}
 .ai-quick button{padding:4px 10px;border-radius:12px;border:1px solid var(--bdr);background:var(--bg);color:var(--tx2);font-size:8px;cursor:pointer;font-family:'Cairo'}
@@ -194,7 +202,9 @@ const SB = {
   /* --- مصادقة --- */
   async login(username, password) {
     const { data, error } = await _supa
-      .from('users')
+
+ERROR 404, [30-May-26 6:20 PM]
+.from('users')
       .select('*, roles(role_name, permissions)')
       .eq('username', username)
       .eq('password_hash', password)
@@ -305,7 +315,8 @@ const SB = {
     return data;
   },
 
-  /* --- أوامر التشغيل --- */
+ERROR 404, [30-May-26 6:20 PM]
+/* --- أوامر التشغيل --- */
   async getWorkOrders() {
     const { data } = await _supa.from('v_work_order_progress').select('*').order('id', { ascending: false });
     return data || [];
@@ -397,7 +408,9 @@ function hideSBLoading() {
 <aside class="sidebar" id="sidebar">
   <div class="brand"><div class="brand-en">DAVID RAMES ERP</div><div class="brand-ar">ERP & CRM</div><div class="brand-line"></div></div>
   <nav class="snav" id="sideNav">
-    <div class="snl">الرئيسية</div>
+
+ERROR 404, [30-May-26 6:20 PM]
+<div class="snl">الرئيسية</div>
     <div class="sni on" data-p="dashboard"><i class="fas fa-th-large"></i>لوحة التحكم</div>
     <div class="snl">CRM</div>
     <div class="sni" data-p="crm"><i class="fas fa-funnel-dollar"></i>بوق المبيعات</div>
@@ -437,12 +450,18 @@ function hideSBLoading() {
   <div class="pcontent">
     <section class="psec on" id="pg-dashboard"><div class="kg" id="dKPI"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:5px"><div class="tw"><div class="thd"><h3>بوق المبيعات</h3></div><div style="padding:5px" id="dFunnel"></div></div><div class="tw"><div class="thd"><h3>تنبيهات المخازن</h3></div><div style="padding:5px;max-height:140px;overflow-y:auto" id="dAlerts"></div></div></div><div class="tw"><div class="thd"><h3>آخر الأنشطة</h3></div><div style="padding:5px" id="dAct"></div></div></section>
     <section class="psec" id="pg-crm"><div class="kg" id="crmKPI"></div><div class="tw"><div class="thd"><h3>بوق المبيعات</h3><div class="tacts" id="crmF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>العميل</th><th>الهاتف</th><th>المرحلة</th><th>القيمة</th><th>إجراء</th></tr></thead><tbody id="crmT"></tbody></table></div></div></section>
-    <section class="psec" id="pg-clients"><div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap"><button class="btn btn-p" onclick="openMod('client')"><i class="fas fa-plus"></i>إضافة عميل جديد</button><button class="btn btn-s" onclick="manualSaveAll()"><i class="fas fa-save"></i>حفظ يدوي</button><span id="saveStatus" style="font-size:7px;color:var(--tx3);margin-right:auto;display:flex;align-items:center;gap:3px"><i class="fas fa-circle" style="font-size:5px;color:var(--ok)"></i>الحفظ التلقائي مفعّل</span></div><div class="kg" id="clKPI"></div><div class="tw" style="margin-bottom:6px"><div class="thd"><h3>توزيع العملاء حسب المراحل</h3></div><div style="padding:8px" id="clFunnel"></div></div><div class="tw"><div class="thd"><h3>سجل العملاء مع المراحل</h3><div class="tacts" id="clF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>الاسم</th><th>الهاتف</th><th>المدينة</th><th>المرحلة</th><th>القيمة</th><th>آخر تحديث</th><th>إجراءات</th></tr></thead><tbody id="clT"></tbody></table></div></div></section>
+    <section class="psec" id="pg-clients"><div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap"><button class="btn btn-p" onclick="openMod('client')"><i class="fas fa-plus"></i>إضافة عميل جديد</button><button class="btn btn-s" onclick="manualSaveAll()"><i class="fas fa-save"></i>حفظ يدوي</button><span id="saveStatus"
+
+ERROR 404, [30-May-26 6:20 PM]
+style="font-size:7px;color:var(--tx3);margin-right:auto;display:flex;align-items:center;gap:3px"><i class="fas fa-circle" style="font-size:5px;color:var(--ok)"></i>الحفظ التلقائي مفعّل</span></div><div class="kg" id="clKPI"></div><div class="tw" style="margin-bottom:6px"><div class="thd"><h3>توزيع العملاء حسب المراحل</h3></div><div style="padding:8px" id="clFunnel"></div></div><div class="tw"><div class="thd"><h3>سجل العملاء مع المراحل</h3><div class="tacts" id="clF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>الاسم</th><th>الهاتف</th><th>المدينة</th><th>المرحلة</th><th>القيمة</th><th>آخر تحديث</th><th>إجراءات</th></tr></thead><tbody id="clT"></tbody></table></div></div></section>
     <section class="psec" id="pg-visits"><div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap"><button class="btn btn-p" onclick="openMod('visit')"><i class="fas fa-plus"></i>تسجيل زيارة</button></div><div class="kg" id="visKPI"></div><div class="tw"><div class="thd"><h3>سجل الزيارات</h3></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>التاريخ</th><th>اسم العميل</th><th>الهاتف</th><th>البريد</th><th>المنتج</th><th>المرحلة</th><th>إجراء</th></tr></thead><tbody id="viT"></tbody></table></div></div></section>
     <section class="psec" id="pg-leads"><div style="display:flex;gap:4px;margin-bottom:8px"><button class="btn btn-p" onclick="openMod('lead')"><i class="fas fa-plus"></i>إضافة محتمل</button></div><div class="tw"><div class="thd"><h3>المحتملون</h3></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>الاسم</th><th>الهاتف</th><th>المصدر</th><th>الاهتمام</th><th>إجراء</th></tr></thead><tbody id="ldT"></tbody></table></div></div></section>
     <section class="psec" id="pg-engineering"><div class="kg" id="engKPI"></div><div class="tw"><div class="thd"><h3>الهندسة</h3><div class="tacts" id="engF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>العميل</th><th>المنتج</th><th>المرحلة</th><th>التقدم</th><th>إجراء</th></tr></thead><tbody id="engT"></tbody></table></div></div></section>
     <section class="psec" id="pg-production"><div class="kg" id="prdKPI"></div><div class="tw"><div class="thd"><h3>الإنتاج</h3><div class="tacts" id="prdF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>العميل</th><th>المنتج</th><th>المرحلة</th><th>التقدم</th><th>إجراء</th></tr></thead><tbody id="prdT"></tbody></table></div></div></section>
-    <section class="psec" id="pg-accounts"><div class="kg" id="accKPI"></div><div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap"><button class="btn btn-p" onclick="openMod('custInvoice')"><i class="fas fa-file-invoice"></i> فاتورة عميل جديدة</button></div><div class="tw" style="margin-bottom:8px"><div class="thd"><h3>فواتير العملاء</h3><div class="tacts" id="custInvF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>السريال</th><th>العميل</th><th>البنود</th><th>الإجمالي</th><th>المقدمة</th><th>المتبقي</th><th>الحالة</th><th>التاريخ</th><th>إجراء</th></tr></thead><tbody id="custInvT"></tbody></table></div></div><div class="tw" style="margin-bottom:8px"><div class="thd"><h3>الفواتير البسيطة</h3><div class="tacts" id="accF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>العميل</th><th>المبلغ</th><th>النوع</th><th>الحالة</th><th>التاريخ</th><th>إجراء</th></tr></thead><tbody id="accT"></tbody></table></div></div><div class="ai-rpt-grid" style="margin-top:8px"><div class="tw"><div class="thd"><h3>شجرة الحسابات</h3></div><div style="padding:8px;max-height:250px;overflow-y:auto" id="chartOfAccounts"></div></div><div class="tw"><div class="thd"><h3>القيود المحاسبية</h3></div><div style="padding:8px;max-height:250px;overflow-y:auto" id="journalEntries"></div></div></div><div class="ai-rpt-grid"><div class="tw"><div class="thd"><h3>ميزان المراجعة</h3></div><div style="padding:8px;max-height:200px;overflow-y:auto" id="trialBalance"></div></div><div class="tw"><div class="thd"><h3>قائمة الدخل</h3></div><div style="padding:8px;max-height:200px;overflow-y:auto" id="incomeStatement"></div></div></div></section>
+    <section class="psec" id="pg-accounts"><div class="kg" id="accKPI"></div><div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap"><button class="btn btn-p" onclick="openMod('custInvoice')"><i class="fas fa-file-invoice"></i> فاتورة عميل جديدة</button></div><div class="tw" style="margin-bottom:8px"><div class="thd"><h3>فواتير العملاء</h3><div class="tacts" id="custInvF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>السريال</th><th>العميل</th><th>البنود</th><th>الإجمالي</th><th>المقدمة</th><th>المتبقي</th><th>الحالة</th><th>التاريخ</th><th>إجراء</th></tr></thead><tbody id="custInvT"></tbody></table></div></div><div class="tw" style="margin-bottom:8px"><div class="thd"><h3>الفواتير البسيطة</h3><div class="tacts" id="accF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>العميل</th><th>المبلغ</th><th>النوع</th><th>الحالة</th><th>التاريخ</th><th>إجراء</th></tr></thead><tbody id="accT"></tbody></table></div></div><div class="ai-rpt-grid" style="margin-top:8px"><div class="tw"><div class="thd"><h3>شجرة الحسابات</h3></div><div style="padding:8px;max-height:250px;overflow-y:auto" id="chartOfAccounts"></div></div><div class="tw"><div class="thd"><h3>القيود المحاسبية</h3></div><div style="padding:8px;max-height:250px;overflow-y:auto" id="journalEntries"></div></div></div><div class="ai-rpt-grid"><div class="tw"><div class="thd"><h3>ميزان المراجعة</h3></div><div style="padding:8px;max-height:200px;overflow-y:auto" id="trialBalance"></div></div><div class="tw"><div class="thd"><h3>قائمة الدخل</h3></div><div style="padding:8px;max-height:200px;overflow-y:auto"
+
+ERROR 404, [30-May-26 6:20 PM]
+id="incomeStatement"></div></div></div></section>
     <section class="psec" id="pg-suppliers"><div style="display:flex;gap:4px;margin-bottom:8px"><button class="btn btn-p" onclick="openMod('supplier')"><i class="fas fa-plus"></i>إضافة مورّد</button></div><div class="tw"><div class="thd"><h3>الموردين</h3></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>الاسم</th><th>التخصص</th><th>الهاتف</th><th>المدينة</th><th>إجراء</th></tr></thead><tbody id="supT"></tbody></table></div></div></section>
     <section class="psec" id="pg-inventory"><div class="kg" id="invKPI"></div><div class="tw"><div class="thd"><h3>المخازن</h3><div class="tacts" id="invF"></div></div><div style="overflow-x:auto"><table><thead><tr><th>#</th><th>الصنف</th><th>الفئة</th><th>الكمية</th><th>الحد الأدنى</th><th>الحالة</th><th>إجراء</th></tr></thead><tbody id="invT"></tbody></table></div></div></section>
     
@@ -483,7 +502,9 @@ function hideSBLoading() {
         <select id="payrollMonth" onchange="rPay()" style="padding:4px 8px;border:1px solid var(--bdr);border-radius:4px;background:var(--bg2);color:var(--tx);font-size:9px;font-family:'Cairo'">
           <option value="2025-02" selected>فبراير 2025</option>
           <option value="2025-01">يناير 2025</option>
-        </select>
+
+ERROR 404, [30-May-26 6:20 PM]
+</select>
         <button class="btn btn-p" onclick="syncAttendanceToPayroll()"><i class="fas fa-sync-alt"></i> ترحيل ومزامنة أرصدة الحضور والغياب</button>
       </div>
       <div class="kg" id="payKPI"></div>
@@ -558,6 +579,8 @@ function hideSBLoading() {
 
 <script>
 /* ===================== قواعد البيانات للمستخدمين والأدوار ===================== */
+
+ERROR 404, [30-May-26 6:20 PM]
 var ROLES={
   admin:{name:'إداري',color:'var(--acc)',perms:['dashboard','crm','clients','visits','leads','engineering','production','accounts','suppliers','inventory','hr','attendance','payroll','users','reports','activity']},
   sales:{name:'مبيعات',color:'var(--ok)',perms:['dashboard','crm','clients','visits','leads','reports','activity']},
@@ -607,7 +630,9 @@ var DB={
     {code:'1120',name:'البنك الأهلي',type:'asset',parent:'1100',balance:580000},
     {code:'1200',name:'العملاء',type:'asset',parent:'1000'},
     {code:'1210',name:'ذمم عملاء',type:'asset',parent:'1200',balance:73950},
-    {code:'1300',name:'المخزون',type:'asset',parent:'1000'},
+
+ERROR 404, [30-May-26 6:20 PM]
+{code:'1300',name:'المخزون',type:'asset',parent:'1000'},
     {code:'2000',name:'الخصوم',type:'liability',parent:null},
     {code:'2100',name:'الموردون',type:'liability',parent:'2000'},
     {code:'3000',name:'حقوق الملكية',type:'equity',parent:null},
@@ -653,7 +678,7 @@ var DB={
 function parseTime(t) {
   if(!t) return null;
   var parts=t.split(':');
-  return { h:parseInt(parts[0])||0, m:parseInt(parts[1])||0 };
+  return { h:parseInt(parts[0])0, m:parseInt(parts[1])0 };
 }
 function getTimeDiffInMinutes(start, end) {
   var s=parseTime(start), e=parseTime(end);
@@ -668,7 +693,9 @@ function getTimeDiffInMinutes(start, end) {
  * هيكل الحساب لكل موظف:
  * 1. مرتب اليوم = الراتب الأساسي المعرف في ملف الهيئة
  * 2. عدد أيام العمل = مجموع الأيام الحاضرة + الأيام الإضافية
- * 3. أيام الخصم = أيام الغياب + أيام التأخير (محولة لأيام)
+
+ERROR 404, [30-May-26 6:20 PM]
+* 3. أيام الخصم = أيام الغياب + أيام التأخير (محولة لأيام)
  * 4. إجمالي المرتب = مرتب اليوم × عدد أيام العمل
  * 5. صافي المرتب = إجمالي المرتب - تامينات - مديونية - خصومات - سلف + سداد مديونية + حوافز
  * ================================================================== */
@@ -771,7 +798,8 @@ function calculatePayrollData(month) {
       if(adj.debtRepayment !== undefined) debtRepayment=parseFloat(adj.debtRepayment);
     }
 
-    // ===== التحقق من أرصدة الإجازات =====
+ERROR 404, [30-May-26 6:20 PM]
+// ===== التحقق من أرصدة الإجازات =====
     var empLeaves=DB.leaves.filter(function(lv){
       return lv.empName===emp.name && lv.status==='مقبول' && lv.from && lv.to;
     });
@@ -877,7 +905,9 @@ function doLogin(){
       // fallback للمستخدمين المحليين
       var found=USERS.find(function(x){return x.user===u&&x.pass===p});
       if(!found){showErr('اسم المستخدم أو كلمة المرور غير صحيحة');return}
-      if(!found.active){showErr('هذا الحساب معطّل — تواصل مع الإدارة');return}
+
+ERROR 404, [30-May-26 6:20 PM]
+if(!found.active){showErr('هذا الحساب معطّل — تواصل مع الإدارة');return}
       currentUser=found;
       enterApp();
     }
@@ -999,6 +1029,7 @@ function saveClientToSupabase(clientObj, isNew) {
   }).catch(function(e){ console.log('Save customer error:', e); });
 }
 
+ERROR 404, [30-May-26 6:20 PM]
 function showErr(m){var e=document.getElementById('loginErr');e.textContent=m;e.style.display='block';setTimeout(function(){e.style.display='none'},4000)}
 function doLogout(){currentUser=null;document.getElementById('loginScreen').style.display='flex';document.getElementById('appScreen').style.display='none';document.getElementById('loginUser').value='';document.getElementById('loginPass').value='';document.getElementById('loginErr').style.display='none'}
 
@@ -1039,6 +1070,8 @@ function engProg(o){var i=engI(o);return i<0?0:Math.round(i/(ENG_STAGES.length-1
 function prdProg(o){var i=prdI(o);return i<0?0:Math.round(i/(PRD_STAGES.length-1)*100)}
 function engB(id){var s=ENG_STAGES.find(function(x){return x.id===id});return s?'<span class="bg '+(ENG_C[id]||'bg-in')+'">'+s.lb+'</span>':''}
 function prdB(id){var s=PRD_STAGES.find(function(x){return x.id===id});return s?'<span class="bg '+(PRD_C[id]||'bg-in')+'">'+s.lb+'</span>':''}
+
+ERROR 404, [30-May-26 6:20 PM]
 function crmB(s){return '<span class="bg '+(CRM_C[s]||'bg-in')+'">'+s+'</span>'}
 function pbar(p,c){var cl=c||(p>=80?'var(--ok)':p>=40?'var(--acc)':'var(--in)');return '<div style="display:flex;align-items:center;gap:3px"><div class="pb" style="flex:1"><div class="pf" style="width:'+p+'%;background:'+cl+'"></div></div><span style="font-size:7px;color:var(--tx3)">'+Math.round(p)+'%</span></div>'}
 function kpi(ic,co,bg,v,l,gl){return '<div class="kc"><div class="gl" style="background:'+gl+'"></div><div class="ki" style="background:'+bg+';color:'+co+'"><i class="fas '+ic+'"></i></div><div class="kv">'+v+'</div><div class="kl">'+l+'</div></div>'}
@@ -1113,7 +1146,9 @@ function doSearch(q){
 function rPay(){
   var m=document.getElementById('payrollMonth').value;
   var payrollList = calculatePayrollData(m);
-  var totalPaid = 0, totalDed = 0, totalAdd = 0;
+
+ERROR 404, [30-May-26 6:20 PM]
+var totalPaid = 0, totalDed = 0, totalAdd = 0;
   
   document.getElementById('payT').innerHTML=payrollList.map(function(p){
     totalPaid += p.netSalary; totalDed += p.totalDeductions; totalAdd += p.totalAdditions;
@@ -1149,16 +1184,18 @@ function openPayrollAdjustMod(empId, month) {
   var emp = DB.employees.find(function(e){return e.id===empId});
   if(!emp) return;
   var adjKey = empId + '_' + month;
-  var currentAdj = DB.payrollAdjustments[adjKey] || { advances:0, incentives:0, deductions:0, insurance: (emp.insurance || 0), debts:0, debtRepayment:0 };
+  var currentAdj = DB.payrollAdjustments[adjKey]  { advances:0, incentives:0, deductions:0, insurance: (emp.insurance  0), debts:0, debtRepayment:0 };
   
   var t=document.getElementById('mTi');var b=document.getElementById('mBd');var f=document.getElementById('mFt');
   t.textContent='تعديل البنود المالية لشهر ' + month + ' — ' + emp.name;
   b.innerHTML='<div class="fbox"><h4><i class="fas fa-edit" style="color:var(--acc)"></i> البنود المالية الشهرية (حسب ملف الإجازات والسلف)</h4>' +
     '<p style="font-size:7px;color:var(--tx2);margin-bottom:6px"><i class="fas fa-info-circle"></i> المعادلة: صافي = (يومية × صافي الأيام) - تامينات - مديونية - خصومات - سلف + سداد + حوافز</p>' +
-    '<div class="fr"><div class="fg"><label style="color:var(--er)">التأمينات الاجتماعية (-)</label><input type="number" id="padj_insurance" value="'+(currentAdj.insurance || emp.insurance || 0)+'"></div>' +
+    '<div class="fr"><div class="fg"><label style="color:var(--er)">التأمينات الاجتماعية (-)</label><input type="number" id="padj_insurance" value="'+(currentAdj.insurance  emp.insurance  0)+'"></div>' +
     '<div class="fg"><label style="color:var(--er)">المديونية (-)</label><input type="number" id="padj_debts" value="'+(currentAdj.debts || 0)+'"></div></div>' +
     '<div class="fr"><div class="fg"><label style="color:var(--er)">السلفيات المسحوبة (-)</label><input type="number" id="padj_advances" value="'+(currentAdj.advances || 0)+'"></div>' +
-    '<div class="fg"><label style="color:var(--er)">خصومات إدارية وعقوبات (-)</label><input type="number" id="padj_deductions" value="'+(currentAdj.deductions || 0)+'"></div></div>' +
+
+ERROR 404, [30-May-26 6:20 PM]
+'<div class="fg"><label style="color:var(--er)">خصومات إدارية وعقوبات (-)</label><input type="number" id="padj_deductions" value="'+(currentAdj.deductions || 0)+'"></div></div>' +
     '<div class="fr"><div class="fg"><label style="color:var(--ok)">سداد مديونية (+)</label><input type="number" id="padj_debtRepayment" value="'+(currentAdj.debtRepayment || 0)+'"></div>' +
     '<div class="fg"><label style="color:var(--ok)">الحوافز التشجيعية (+)</label><input type="number" id="padj_incentives" value="'+(currentAdj.incentives || 0)+'"></div></div>' +
     '</div>';
@@ -1213,7 +1250,9 @@ function printPayslip(empId, month) {
                    '<div class="grid"><div><strong>اسم الموظف:</strong> ' + p.name + '<br><strong>القسم / المسمى الوظيفي:</strong> ' + p.dept + '</div>' +
                    '<div style="text-align:left"><strong>نظام الأجر:</strong> باليومية القياسية ('+p.dailyWage+' ر.س / يوم)<br><strong>مواعيد الوردية المسجلة:</strong> من ' + p.shiftStart + ' إلى ' + p.shiftEnd + '</div></div>' +
                    '<table><thead><tr><th>البند الوظيفي والمالي</th><th>القيمة / التوقيت</th><th>الأثر المالي المضاف (+)</th><th>الأثر المالي المستقطع (-)</th></tr></thead>' +
-                   '<tbody>' +
+
+ERROR 404, [30-May-26 6:26 PM]
+'<tbody>' +
                    '<tr><td><b>مرتب اليوم × أيام العمل العادية</b></td><td>' + p.dailyWage + ' ر.س × ' + p.daysWork + ' يوم = ' + p.totalSalary.toLocaleString() + ' ر.س</td><td>' + p.totalSalary.toLocaleString() + ' ر.س</td><td>—</td></tr>' +
                    '<tr><td><b>صافي الأيام × مرتب اليوم = المستحق</b></td><td>' + p.dailyWage + ' ر.س × ' + p.netWorkDays + ' يوم = ' + p.grossTotal.toLocaleString() + ' ر.س</td><td>' + p.grossTotal.toLocaleString() + ' ر.س</td><td>—</td></tr>' +
                    '<tr><td><b>الأيام الإضافية</b></td><td>' + p.extraDays + ' يوم إضافي</td><td>' + p.extraDaysPay.toLocaleString() + ' ر.س</td><td>—</td></tr>' +
@@ -1248,7 +1287,9 @@ function rDash(){
 
 function rCRM(f){
   var d=DB.crm;if(f&&f!=='all')d=d.filter(function(c){return c.stage===f});
-  document.getElementById('crmT').innerHTML=d.map(function(c){
+
+ERROR 404, [30-May-26 6:26 PM]
+document.getElementById('crmT').innerHTML=d.map(function(c){
     return '<tr><td>'+c.id+'</td><td>'+c.client+'</td><td>'+c.phone+'</td><td>'+crmB(c.stage)+'</td><td>'+c.value.toLocaleString()+'</td><td><button class="ib" onclick="viewCRM(\''+c.id+'\')"><i class="fas fa-eye"></i></button></td></tr>';
   }).join('');
   document.getElementById('crmKPI').innerHTML=kpi('fa-funnel-dollar','var(--pu)','rgba(136,104,216,.07)',DB.crm.length,'الفرص النشطة','var(--pu)');
@@ -1299,11 +1340,13 @@ function renderClientTable(){
       '<td>'+c.city+'</td>'+
       '<td>'+clientBadge(c.stage)+'</td>'+
       '<td>'+(c.value?c.value.toLocaleString()+' ر.س':'—')+'</td>'+
-      '<td><small style="color:var(--tx3)">'+(c.updatedAt||c.createdAt||'—')+'</small></td>'+
+      '<td><small style="color:var(--tx3)">'+(c.updatedAtc.createdAt'—')+'</small></td>'+
       '<td>'+
         '<button class="btn btn-sm btn-s" onclick="editClient(\''+c.id+'\')" title="تعديل"><i class="fas fa-edit"></i></button> '+
         '<button class="btn btn-sm btn-s" onclick="transferClientStage(\''+c.id+'\')" title="ترحيل المرحلة"><i class="fas fa-exchange-alt"></i></button> '+
-        '<button class="btn btn-sm btn-s" onclick="viewClientHistory(\''+c.id+'\')" title="سجل المراحل"><i class="fas fa-history"></i></button> '+
+
+ERROR 404, [30-May-26 6:26 PM]
+'<button class="btn btn-sm btn-s" onclick="viewClientHistory(\''+c.id+'\')" title="سجل المراحل"><i class="fas fa-history"></i></button> '+
         '<button class="btn btn-sm btn-d" onclick="deleteClient(\''+c.id+'\')" title="حذف"><i class="fas fa-trash"></i></button>'+
       '</td></tr>';
   }).join('') || '<tr><td colspan="8" class="emt"><i class="fas fa-users"></i><br>لا يوجد عملاء في هذه المرحلة</td></tr>';
@@ -1362,7 +1405,8 @@ function saveEditClient(id){
     c.stageHistory.push({stage:'متوقف',date:c.updatedAt,by:currentUser?currentUser.name:'النظام'});
   }
 
-  // ترحيل تغيير الاسم والهاتف لكل الأقسام
+ERROR 404, [30-May-26 6:26 PM]
+// ترحيل تغيير الاسم والهاتف لكل الأقسام
   if(oldName !== name) {
     // تحديث في الطلبات
     DB.orders.forEach(function(o){ if(o.client===oldName) o.client=name; });
@@ -1420,7 +1464,9 @@ function transferClientStage(id){
 function saveClientStage(id){
   var c=DB.clients.find(function(x){return x.id===id});if(!c)return;
   var newStage=document.getElementById('tc_stage').value;
-  var notes=document.getElementById('tc_notes').value.trim();
+
+ERROR 404, [30-May-26 6:26 PM]
+var notes=document.getElementById('tc_notes').value.trim();
   if(newStage===c.stage){toast('المرحلة المختارة هي نفسها الحالية','in');return}
   var oldStage=c.stage;
   var now=new Date().toISOString().split('T')[0];
@@ -1487,7 +1533,9 @@ function openShiftConfigMod(empId) {
   var t=document.getElementById('mTi');var b=document.getElementById('mBd');var f=document.getElementById('mFt');
   t.textContent='ضبط مواعيد الوردية الرسمية للشيفت المتغير — ' + emp.name;
   b.innerHTML='<div class="fbox"><h4><i class="fas fa-clock"></i> إعداد مواعيد العمل اليدوية لهذا الموظف</h4>' +
-              '<div class="fr">' +
+
+ERROR 404, [30-May-26 6:26 PM]
+'<div class="fr">' +
                 '<div class="fg"><label>موعد الحضور الرسمي الافتراضي</label><input type="time" id="sh_start" value="'+(emp.shiftStart || '08:00')+'"></div>' +
                 '<div class="fg"><label>موعد الانصراف الرسمي الافتراضي</label><input type="time" id="sh_end" value="'+(emp.shiftEnd || '17:00')+'"></div>' +
               '</div>' +
@@ -1542,531 +1590,4 @@ function rAcc(){
 function viewCRM(id){
   var c=DB.crm.find(function(x){return x.id===id});if(!c)return;
   document.getElementById('mTi').textContent='تفاصيل الفرصة — '+c.client;
-  document.getElementById('mBd').innerHTML='<div class="fbox"><h4>بيانات الفرصة</h4><div class="sr"><span class="sl">العميل</span><span>'+c.client+'</span></div><div class="sr"><span class="sl">الحالة الحالية</span><span>'+c.stage+'</span></div><div class="sr"><span class="sl">القيمة المتوقعة</span><span>'+c.value.toLocaleString()+' ر.س</span></div></div>';
-  document.getElementById('mFt').innerHTML='<button class="btn btn-s" onclick="closeMod()">إغلاق</button>';
-  openModal();
-}
-
-function viewVisit(id){
-  var v=DB.visits.find(function(x){return x.id===id});if(!v)return;
-  document.getElementById('mTi').textContent='تفاصيل الزيارة — '+v.clientName;
-  document.getElementById('mBd').innerHTML='<div class="fbox"><h4>بيانات الزيارة</h4><div class="sr"><span class="sl">العميل</span><span>'+v.clientName+'</span></div><div class="sr"><span class="sl">المنتج</span><span>'+v.productInterest+'</span></div></div>';
-  document.getElementById('mFt').innerHTML='<button class="btn btn-s" onclick="closeMod()">إغلاق</button>';
-  openModal();
-}
-
-function rCustInv(){
-  var d=DB.custInvoices;
-  document.getElementById('custInvT').innerHTML=d.map(function(v){
-    return '<tr><td>'+v.id+'</td><td>'+v.serial+'</td><td>'+v.client+'</td><td>'+v.items.length+'</td><td>'+v.subtotal.toLocaleString()+'</td><td>'+v.advance.toLocaleString()+'</td><td>'+v.remaining.toLocaleString()+'</td><td><span class="bg bg-wn">'+v.status+'</span></td><td>'+v.date+'</td><td>—</td></tr>';
-  }).join('');
-}
-
-function rChartOfAccounts(){
-  var el=document.getElementById('chartOfAccounts');if(!el)return;
-  el.innerHTML=DB.chartOfAccounts.map(function(a){
-    var hasBal=a.balance!==undefined;
-    return '<div class="coa-item"><span class="coa-code">'+a.code+'</span><span class="coa-name">'+a.name+'</span>'+(hasBal?'<span class="coa-bal">'+a.balance.toLocaleString()+' ر.س</span>':'')+'</div>';
-  }).join('');
-}
-
-function rJournalEntries(){
-  var el=document.getElementById('journalEntries');if(!el)return;
-  el.innerHTML=DB.journalEntries.map(function(je){
-    return '<div class="je-item"><strong>'+je.id+'</strong> — '+je.description+'<br><small>'+je.date+'</small></div>';
-  }).join('');
-}
-
-function rTrialBalance(){
-  var el=document.getElementById('trialBalance');if(!el)return;
-  el.innerHTML='<div class="tb-row tb-head"><span>اسم الحساب</span><span>مدين</span><span>دائن</span></div>' +
-                DB.chartOfAccounts.filter(function(a){return a.balance!==undefined}).map(function(a){
-                  return '<div class="tb-row"><span>'+a.name+'</span><span>'+(a.type==='asset'?a.balance.toLocaleString()+' ر.س':'—')+'</span><span>'+(a.type==='revenue'?a.balance.toLocaleString()+' ر.س':'—')+'</span></div>';
-                }).join('');
-}
-
-function rIncomeStatement(){
-  var el=document.getElementById('incomeStatement');if(!el)return;
-  var totalRev = DB.chartOfAccounts.filter(function(a){return a.type==='revenue'}).reduce(function(s,a){return s+(a.balance||0)},0);
-  var totalExp = DB.chartOfAccounts.filter(function(a){return a.type==='expense'}).reduce(function(s,a){return s+(a.balance||0)},0);
-  el.innerHTML='<div class="is-row"><span>إجمالي الإيرادات</span><strong>'+totalRev.toLocaleString()+' ر.س</strong></div>' +
-                '<div class="is-row"><span>إجمالي المصروفات</span><strong>'+totalExp.toLocaleString()+' ر.س</strong></div>' +
-                '<div class="is-row is-total"><span>صافي الأرباح</span><strong>'+(totalRev-totalExp).toLocaleString()+' ر.س</strong></div>';
-}
-
-function rSup(){
-  document.getElementById('supT').innerHTML=DB.suppliers.map(function(s){
-    return '<tr><td>'+s.id+'</td><td>'+s.name+'</td><td>'+s.spec+'</td><td>'+s.phone+'</td><td>'+s.city+'</td><td>—</td></tr>';
-  }).join('');
-}
-
-function rInv(){
-  document.getElementById('invT').innerHTML=DB.inventory.map(function(i){
-    return '<tr><td>'+i.id+'</td><td>'+i.name+'</td><td>'+i.cat+'</td><td>'+i.qty+'</td><td>'+i.min+'</td><td><span class="bg bg-ok">متوفر</span></td><td>—</td></tr>';
-  }).join('');
-  document.getElementById('invKPI').innerHTML=kpi('fa-warehouse','var(--acc)','var(--accD)',DB.inventory.length,'الأصناف المسجلة','var(--acc)');
-}
-
-function rHR(){
-  document.getElementById('hrT').innerHTML=DB.employees.map(function(e){
-    var start = e.shiftStart || '08:00';
-    var end = e.shiftEnd || '17:00';
-    return '<tr><td>'+e.id+'</td><td><strong>'+e.name+'</strong><br><small style="color:var(--tx2)">'+e.position+'</small></td><td>'+e.dept+'</td><td>'+e.salary.toLocaleString()+' ر.س</td><td><span class="bg bg-in" style="font-weight:600">'+start+' - '+end+'</span></td><td>'+e.insurance+' ر.س</td><td><span class="bg bg-ok">نشط</span></td><td><button class="btn btn-sm btn-p" onclick="editEmployee(\''+e.id+'\')"><i class="fas fa-edit"></i> تعديل</button> <button class="btn btn-sm btn-s" onclick="openShiftConfigMod(\''+e.id+'\')"><i class="fas fa-clock"></i> الوردية</button> <button class="btn btn-sm btn-d" onclick="deleteEmployee(\''+e.id+'\')"><i class="fas fa-trash"></i></button></td></tr>';
-  }).join('');
-  document.getElementById('hrKPI').innerHTML=kpi('fa-users-cog','var(--pk)','rgba(216,88,136,.07)',DB.employees.length,'الموظفين بملف الهيئة','var(--pk)');
-}
-
-/* ===== تعديل بيانات الموظف بالكامل ===== */
-function editEmployee(empId) {
-  var emp = DB.employees.find(function(e){return e.id===empId});
-  if(!emp) return;
-  var t=document.getElementById('mTi');var b=document.getElementById('mBd');var f=document.getElementById('mFt');
-  t.textContent='تعديل بيانات الموظف — ' + emp.name;
-  b.innerHTML='<div class="fbox"><h4><i class="fas fa-user-edit" style="color:var(--acc)"></i> البيانات الأساسية للموظف</h4>' +
-    '<div class="fr"><div class="fg"><label>اسم الموظف الكامل *</label><input type="text" id="ee_name" value="'+emp.name+'"></div>' +
-    '<div class="fg"><label>المنصب / المسمى الوظيفي</label><input type="text" id="ee_pos" value="'+emp.position+'"></div></div>' +
-    '<div class="fr"><div class="fg"><label>القسم الإداري</label><select id="ee_dept"><option value="الإنتاج"'+(emp.dept==='الإنتاج'?' selected':'')+'>الإنتاج</option><option value="الهندسة"'+(emp.dept==='الهندسة'?' selected':'')+'>الهندسة</option><option value="المبيعات"'+(emp.dept==='المبيعات'?' selected':'')+'>المبيعات</option><option value="المحاسبة"'+(emp.dept==='المحاسبة'?' selected':'')+'>المحاسبة</option><option value="الإدارة"'+(emp.dept==='الإدارة'?' selected':'')+'>الإدارة</option></select></div>' +
-    '<div class="fg"><label>أجر اليومية القياسي (ر.س)</label><input type="number" id="ee_salary" value="'+emp.salary+'"></div></div>' +
-    '<div class="fr"><div class="fg"><label>التأمينات الاجتماعية الثابتة (ر.س)</label><input type="number" id="ee_insurance" value="'+(emp.insurance||0)+'"></div>' +
-    '<div class="fg"><label>الحالة</label><select id="ee_status"><option value="نشط"'+(emp.status==='نشط'?' selected':'')+'>نشط</option><option value="موقوف"'+(emp.status==='موقوف'?' selected':'')+'>موقوف</option><option value="إجازة"'+(emp.status==='إجازة'?' selected':'')+'>إجازة</option></select></div></div>' +
-    '<div class="fr"><div class="fg"><label>موعد الحضور الرسمي</label><input type="time" id="ee_start" value="'+(emp.shiftStart||'08:00')+'"></div>' +
-    '<div class="fg"><label>موعد الانصراف الرسمي</label><input type="time" id="ee_end" value="'+(emp.shiftEnd||'17:00')+'"></div></div>' +
-    '<p style="font-size:7px;color:var(--wn);margin-top:4px"><i class="fas fa-exclamation-triangle"></i> تنبيه: عند تغيير اسم الموظف سيتم تحديثه تلقائياً في سجلات الحضور والرواتب والنشاط</p></div>';
-  f.innerHTML='<button class="btn btn-p" onclick="saveEditEmployee(\''+empId+'\')"><i class="fas fa-save"></i> حفظ التعديل</button><button class="btn btn-s" onclick="closeMod()">إلغاء</button>';
-  openModal();
-}
-
-function saveEditEmployee(empId) {
-  var emp = DB.employees.find(function(e){return e.id===empId});
-  if(!emp) return;
-  var newName = document.getElementById('ee_name').value.trim();
-  if(!newName){toast('يجب إدخال اسم الموظف','er');return}
-  var oldName = emp.name;
-  emp.name = newName;
-  emp.position = document.getElementById('ee_pos').value.trim();
-  emp.dept = document.getElementById('ee_dept').value;
-  emp.salary = parseFloat(document.getElementById('ee_salary').value)||0;
-  emp.insurance = parseFloat(document.getElementById('ee_insurance').value)||0;
-  emp.status = document.getElementById('ee_status').value;
-  emp.shiftStart = document.getElementById('ee_start').value;
-  emp.shiftEnd = document.getElementById('ee_end').value;
-
-  // ترحيل تغيير الاسم لسجلات الحضور
-  if(oldName !== newName) {
-    DB.attendance.forEach(function(a){ if(a.empName===oldName) a.empName=newName; });
-    DB.leaves.forEach(function(l){ if(l.empName===oldName) l.empName=newName; });
-    // ترحيل لتعديلات الرواتب
-    var oldAdjKey = empId + '_';
-    Object.keys(DB.payrollAdjustments).forEach(function(k){
-      // لا نحتاج لتغيير المفتاح لأنه يعتمد على empId وليس الاسم
-    });
-    DB.activityLog.forEach(function(log){ if(log.userName===oldName) log.userName=newName; });
-  }
-
-  closeMod(); renderAll(); autoSaveAll();
-  toast('تم تعديل بيانات الموظف '+newName+' بنجاح','ok');
-  logActivity('تعديل موظف','تحديث بيانات الموظف '+newName+(oldName!==newName?' (كان: '+oldName+')':''),'hr');
-}
-
-function deleteEmployee(empId) {
-  var emp = DB.employees.find(function(e){return e.id===empId});
-  if(!emp) return;
-  var t=document.getElementById('mTi');var b=document.getElementById('mBd');var f=document.getElementById('mFt');
-  t.textContent='تأكيد حذف الموظف';
-  b.innerHTML='<div style="padding:16px;text-align:center"><i class="fas fa-exclamation-triangle" style="font-size:28px;color:var(--er);margin-bottom:8px;display:block"></i>' +
-    '<p style="font-size:11px;font-weight:700;margin-bottom:4px">هل أنت متأكد من حذف الموظف؟</p>' +
-    '<p style="font-size:10px;color:var(--tx2)"><strong>'+emp.name+'</strong> — '+emp.position+'</p>' +
-    '<p style="font-size:8px;color:var(--er);margin-top:6px"><i class="fas fa-info-circle"></i> سيتم حذف سجلات الحضور والتعديلات المالية المرتبطة بهذا الموظف</p></div>';
-  f.innerHTML='<button class="btn btn-d" onclick="confirmDeleteEmployee(\''+empId+'\')"><i class="fas fa-trash"></i> نعم، حذف نهائياً</button><button class="btn btn-s" onclick="closeMod()">إلغاء</button>';
-  openModal();
-}
-
-function confirmDeleteEmployee(empId) {
-  var emp = DB.employees.find(function(e){return e.id===empId});
-  var name = emp ? emp.name : '';
-  // حذف سجلات الحضور المرتبطة
-  DB.attendance = DB.attendance.filter(function(a){return a.empName!==name});
-  DB.leaves = DB.leaves.filter(function(l){return l.empName!==name});
-  // حذف تعديلات الرواتب
-  Object.keys(DB.payrollAdjustments).forEach(function(k){
-    if(k.indexOf(empId)===0) delete DB.payrollAdjustments[k];
-  });
-  DB.employees = DB.employees.filter(function(e){return e.id!==empId});
-  closeMod(); renderAll(); autoSaveAll();
-  toast('تم حذف الموظف '+name+' وجميع سجلاته نهائياً','ok');
-  logActivity('حذف موظف','حذف الموظف '+name+' من النظام','hr');
-}
-
-function rAtt(){
-  document.getElementById('attT').innerHTML=DB.attendance.map(function(a){
-    var lateBadge = a.latePermission ? '<span class="bg bg-ok">بإذن</span>' : '<span class="bg bg-er">بدون إذن</span>';
-    var emp = DB.employees.find(function(e){return e.name===a.empName}) || {shiftStart:'08:00', shiftEnd:'17:00'};
-    var shiftText = emp.shiftStart + ' - ' + emp.shiftEnd;
-    return '<tr><td>'+a.date+'</td><td>'+a.empName+'</td><td><small style="color:var(--tx2);font-weight:600">'+shiftText+'</small></td><td>'+(a.timeIn||'—')+'</td><td>'+(a.timeOut||'—')+'</td><td>'+lateBadge+'</td><td><span class="bg bg-ok">'+a.status+'</span></td><td>—</td></tr>';
-  }).join('');
-  document.getElementById('attKPI').innerHTML=kpi('fa-calendar-check','var(--in)','rgba(72,144,216,.07)',DB.attendance.length,'إجمالي سجل الحضور اليومي','var(--in)');
-  renderTodayAttendanceList();
-  renderManualAttGrid();
-}
-
-function renderTodayAttendanceList(){
-  var today = new Date().toISOString().split('T')[0];
-  var todayRecs = DB.attendance.filter(function(a){return a.date===today});
-  var el=document.getElementById('todayAtt');if(!el)return;
-  el.innerHTML=todayRecs.map(function(a){
-    var hasIn = a.timeIn ? a.timeIn : '—';
-    var hasOut = a.timeOut ? a.timeOut : '—';
-    return '<div class="ni2"><span>'+a.empName+'</span><span>'+hasIn+' - '+hasOut+'</span> '+(a.latePermission?'<small>(بإذن)</small>':'')+'</div>';
-  }).join('') || '<p style="font-size:8.5px;text-align:center;padding:10px;color:var(--tx3)">لا توجد سجلات حضور لليوم</p>';
-}
-
-function renderManualAttGrid(){
-  var grid = document.getElementById('manualAttGrid');if(!grid)return;
-  grid.innerHTML=DB.employees.map(function(e){
-    var today = new Date().toISOString().split('T')[0];
-    var rec = DB.attendance.find(function(a){return a.empName===e.name && a.date===today}) || {timeIn:'', timeOut:'', latePermission:false};
-    var permChecked = rec.latePermission ? 'checked' : '';
-    return '<div class="att-card"><div class="att-name"><span class="att-av">'+e.name[0]+'</span><strong>'+e.name+'</strong></div>' +
-           '<div class="att-fields">' +
-             '<div class="fg"><label>حضور</label><input type="time" id="tIn_'+e.id+'" value="'+rec.timeIn+'" onchange="updateAttendanceRecord(\''+e.name+'\',\''+e.id+'\')"></div>' +
-             '<div class="fg"><label>انصراف</label><input type="time" id="tOut_'+e.id+'" value="'+rec.timeOut+'" onchange="updateAttendanceRecord(\''+e.name+'\',\''+e.id+'\')"></div>' +
-           '</div>' +
-           '<div style="margin-top:4px; font-size:7.5px; display:flex; align-items:center; gap:3px">' +
-             '<input type="checkbox" id="tPerm_'+e.id+'" '+permChecked+' onchange="updateAttendanceRecord(\''+e.name+'\',\''+e.id+'\')"> <label style="cursor:pointer;font-weight:600" for="tPerm_'+e.id+'">التأخير المكتشف بإذن رسمي</label>' +
-           '</div></div>';
-  }).join('');
-}
-
-function updateAttendanceRecord(name, empId) {
-  var today = new Date().toISOString().split('T')[0];
-  var timeInVal = document.getElementById('tIn_'+empId).value;
-  var timeOutVal = document.getElementById('tOut_'+empId).value;
-  var latePermVal = document.getElementById('tPerm_'+empId).checked;
-
-  var record = DB.attendance.find(function(a){return a.empName===name && a.date===today});
-  if(record) {
-    record.timeIn = timeInVal;
-    record.timeOut = timeOutVal;
-    record.latePermission = latePermVal;
-    record.status = 'حاضر';
-  } else {
-    DB.attendance.push({
-      id: 'A-' + (DB.attendance.length + 1),
-      empName: name,
-      date: today,
-      timeIn: timeInVal,
-      timeOut: timeOutVal,
-      status: 'حاضر',
-      latePermission: latePermVal
-    });
-  }
-  rAtt(); autoSaveAll();
-  toast('تم تحديث حضور ' + name + ' بنجاح والتحقق من لائحة الأجور والخصم', 'ok');
-}
-
-function manualCheckIn(name, val) {
-  var today = new Date().toISOString().split('T')[0];
-  var record = DB.attendance.find(function(a){return a.empName===name && a.date===today});
-  if(record) {
-    record.timeIn = val;
-    record.status = 'حاضر';
-  } else {
-    DB.attendance.push({id:'A-'+(DB.attendance.length+1), empName:name, date:today, timeIn:val, timeOut:'', status:'حاضر', latePermission:false});
-  }
-  rAtt();
-  toast('تم تسجيل حضور ' + name, 'ok');
-}
-
-function manualCheckOut(name, val) {
-  var today = new Date().toISOString().split('T')[0];
-  var record = DB.attendance.find(function(a){return a.empName===name && a.date===today});
-  if(record) {
-    record.timeOut = val;
-  } else {
-    DB.attendance.push({id:'A-'+(DB.attendance.length+1), empName:name, date:today, timeIn:'', timeOut:val, status:'حاضر', latePermission:false});
-  }
-  rAtt();
-  toast('تم تسجيل انصراف ' + name, 'ok');
-}
-
-function rUsers(){
-  document.getElementById('usrT').innerHTML=USERS.map(function(u){
-    return '<tr><td>'+u.id+'</td><td>'+u.user+'</td><td>'+u.name+'</td><td>'+u.role+'</td><td><span class="bg bg-ok">نشط</span></td><td>الكل</td><td>—</td></tr>';
-  }).join('');
-  document.getElementById('usrKPI').innerHTML=kpi('fa-user-shield','var(--acc)','var(--accD)',USERS.length,'إجمالي مستخدمين النظام','var(--acc)');
-}
-
-function rSketchupFiles(){
-  document.getElementById('sketchupFiles').innerHTML='<p style="font-size:8.5px;text-align:center;color:var(--tx3);padding:20px;">مستودع ملفات التصميم جاهز.</p>';
-}
-
-function filterUsers(r, btn){
-  document.querySelectorAll('#pg-users .fb').forEach(function(x){x.classList.remove('on')});
-  btn.classList.add('on');
-}
-
-function generateSmartAlerts(){
-  smartAlerts=[
-    {id:'A1',type:'crit',icon:'fa-exclamation-triangle',title:'مخزون حرج: ألمنيوم 6063',desc:'الكمية الحالية 500 متر والحد الأدنى هو 100.',time:'الآن',read:false}
-  ];
-  renderAlerts();
-}
-
-function renderAlerts(){
-  var c = smartAlerts.filter(function(x){return !x.read}).length;
-  var el=document.getElementById('alertCount');if(el){el.textContent=c; el.style.display=c?'flex':'none';}
-  var dbList=document.getElementById('alertList');if(dbList){
-    dbList.innerHTML=smartAlerts.map(function(a){
-      return '<div class="alert-item '+(a.read?'':'unread')+'" onclick="readAlert(\''+a.id+'\')">' +
-             '<div class="ai-ic '+a.type+'"><i class="fas '+a.icon+'"></i></div>' +
-             '<div class="ai-txt"><div class="at-title">'+a.title+'</div><div class="at-desc">'+a.desc+'</div><div class="at-time">'+a.time+'</div></div></div>';
-    }).join('');
-  }
-}
-
-function readAlert(id){
-  var a = smartAlerts.find(function(x){return x.id===id});
-  if(a) a.read=true;
-  renderAlerts();
-}
-
-function generateAllReports() {
-  generateSmartAlerts();
-  var rGrid = document.getElementById('aiReportsGrid');if(!rGrid)return;
-  rGrid.innerHTML=
-    '<div class="ai-report-card"><div class="arc-h"><h4>تقرير المبيعات والتعاقدات</h4><span class="arc-tag bg-ok">آمن</span></div>' +
-    '<div class="arc-metrics"><div class="arc-metric"><strong>'+DB.crm.length+'</strong><br>فرص تجارية</div>' +
-    '<div class="arc-metric"><strong>'+DB.orders.length+'</strong><br>طلبات إنتاجية</div></div>' +
-    '<div class="arc-insight"><i class="fas fa-robot"></i> تحليل ذكي: مستوى مبيعات وأداء هندسي وإنتاجي ثابت في الورشة والمصنع.</div></div>';
-}
-
-var aiChatHistory=[];
-function toggleAIPanel(){
-  document.getElementById('aiPanel').classList.toggle('open');
-}
-function aiAsk(q){
-  document.getElementById('aiInput').value=q;
-  aiSend();
-}
-function aiSend(){
-  var input=document.getElementById('aiInput');
-  var val = input.value.trim();if(!val) return;
-  var chatBody = document.getElementById('aiChatBody');
-  chatBody.innerHTML += '<div class="ai-msg user">'+val+'</div>';
-  input.value='';
-  chatBody.scrollTop = chatBody.scrollHeight;
-  setTimeout(function(){
-    chatBody.innerHTML += '<div class="ai-msg bot"><i class="fas fa-robot"></i> أهلاً بك! أنا المساعد الذكي. كيف يمكنني خدمتك اليوم؟</div>';
-    chatBody.scrollTop = chatBody.scrollHeight;
-  }, 600);
-}
-
-var _origRenderAll=function() {
-  rDash();rCRM();rClients();rVisits();rLeads();rEng();rPrd();rAcc();rCustInv();
-  rChartOfAccounts();rTrialBalance();rIncomeStatement();rJournalEntries();
-  rSup();rInv();rHR();rAtt();rPay();rUsers();rSketchupFiles();rActivityLog();
-};
-function renderAll() {
-  _origRenderAll();
-  generateSmartAlerts();
-  generateAllReports();
-}
-
-/* ===================== نظام الحفظ التلقائي واليدوي ===================== */
-var SAVE_KEY = 'DAVID_RAMES_ERP_DB';
-var autoSaveTimer = null;
-var lastSavedAt = null;
-
-function autoSaveAll() {
-  if(autoSaveTimer) clearTimeout(autoSaveTimer);
-  autoSaveTimer = setTimeout(function() {
-    try {
-      var saveData = JSON.stringify(DB);
-      localStorage.setItem(SAVE_KEY, saveData);
-      lastSavedAt = new Date();
-      updateSaveStatus('ok', 'تم الحفظ: ' + lastSavedAt.toLocaleTimeString('ar-SA'));
-    } catch(e) {
-      updateSaveStatus('er', 'فشل الحفظ التلقائي');
-    }
-  }, 800);
-}
-
-function manualSaveAll() {
-  try {
-    var saveData = JSON.stringify(DB);
-    localStorage.setItem(SAVE_KEY, saveData);
-    lastSavedAt = new Date();
-    updateSaveStatus('ok', 'تم الحفظ اليدوي بنجاح: ' + lastSavedAt.toLocaleTimeString('ar-SA'));
-    toast('تم حفظ جميع البيانات يدوياً بنجاح', 'ok');
-    logActivity('حفظ يدوي', 'حفظ يدوي لجميع بيانات النظام', 'system');
-  } catch(e) {
-    updateSaveStatus('er', 'فشل الحفظ اليدوي');
-    toast('فشل في حفظ البيانات', 'er');
-  }
-}
-
-function loadSavedData() {
-  try {
-    var saved = localStorage.getItem(SAVE_KEY);
-    if(saved) {
-      var parsed = JSON.parse(saved);
-      if(parsed && typeof parsed === 'object') {
-        var keys = Object.keys(DB);
-        keys.forEach(function(k) {
-          if(parsed[k] !== undefined) {
-            DB[k] = parsed[k];
-          }
-        });
-        updateSaveStatus('ok', 'تم استعادة البيانات المحفوظة');
-        return true;
-      }
-    }
-  } catch(e) {
-    console.log('No saved data found or parse error');
-  }
-  return false;
-}
-
-function updateSaveStatus(type, msg) {
-  var el = document.getElementById('saveStatus');
-  if(!el) return;
-  var color = type === 'ok' ? 'var(--ok)' : 'var(--er)';
-  var icon = type === 'ok' ? 'fa-check-circle' : 'fa-exclamation-circle';
-  el.innerHTML = '<i class="fas '+icon+'" style="font-size:5px;color:'+color+'"></i><span style="color:'+color+';font-size:6px">'+msg+'</span>';
-  setTimeout(function() {
-    el.innerHTML = '<i class="fas fa-circle" style="font-size:5px;color:var(--ok)"></i><span style="color:var(--tx3);font-size:6px">الحفظ التلقائي مفعّل</span>';
-  }, 4000);
-}
-
-/* ===================== النماذج المنبثقة والاضافية ===================== */
-function openMod(type) {
-  var t=document.getElementById('mTi');var b=document.getElementById('mBd');var f=document.getElementById('mFt');
-  if(type==='attendance') {
-    t.textContent='تسجيل حضور يومي';
-    b.innerHTML='<div class="fbox"><div class="fg"><label>الموظف</label><select id="att_emp_name">'+DB.employees.map(function(e){return '<option value="'+e.name+'">'+e.name+'</option>'}).join('')+'</select></div>' +
-                '<div class="fr"><div class="fg"><label>الوقت</label><input type="time" id="att_time" value="08:00"></div>' +
-                '<div class="fg"><label>التاريخ</label><input type="date" id="att_date" value="'+new Date().toISOString().split('T')[0]+'"></div></div>' +
-                '<div style="margin-top:5px;font-size:8px;"><input type="checkbox" id="att_late_perm"> <label for="att_late_perm">التأخير بإذن رسمي (لا يخصم)</label></div></div>';
-    f.innerHTML='<button class="btn btn-p" onclick="saveNewAtt()">حفظ</button><button class="btn btn-s" onclick="closeMod()">إلغاء</button>';
-  } else if(type==='client') {
-    t.textContent='إضافة عميل جديد بالمراحل';
-    b.innerHTML='<div class="fbox"><h4><i class="fas fa-user-plus" style="color:var(--acc)"></i> بيانات العميل الجديد</h4>'+
-      '<div class="fr"><div class="fg"><label>اسم العميل *</label><input type="text" id="cl_new_name" placeholder="أدخل اسم العميل"></div>'+
-      '<div class="fg"><label>الهاتف</label><input type="text" id="cl_new_phone" placeholder="05XXXXXXXX"></div></div>'+
-      '<div class="fr"><div class="fg"><label>المدينة</label><input type="text" id="cl_new_city" value="الرياض"></div>'+
-      '<div class="fg"><label>القيمة المتوقعة (ر.س)</label><input type="number" id="cl_new_value" value="0"></div></div>'+
-      '<div class="fg"><label>ملاحظات</label><textarea id="cl_new_notes" placeholder="أضف ملاحظات عن العميل..."></textarea></div></div>';
-    f.innerHTML='<button class="btn btn-p" onclick="saveNewClient()"><i class="fas fa-save"></i> حفظ العميل</button><button class="btn btn-s" onclick="closeMod()">إلغاء</button>';
-  } else if(type==='employee') {
-    t.textContent='إضافة موظف جديد بملف الهيئة';
-    b.innerHTML='<div class="fbox"><h4><i class="fas fa-user-plus"></i> البيانات القياسية للموظف واليومية</h4>' +
-                '<div class="fr">' +
-                  '<div class="fg"><label>اسم الموظف الكامل</label><input type="text" id="emp_new_name" placeholder="مثال: خالد العلي"></div>' +
-                  '<div class="fg"><label>المنصب / المسمى الوظيفي</label><input type="text" id="emp_new_pos" placeholder="مثال: فني تقطيع"></div>' +
-                '</div>' +
-                '<div class="fr">' +
-                  '<div class="fg"><label>القسم الإداري</label><select id="emp_new_dept"><option value="الإنتاج">الإنتاج</option><option value="الهندسة">الهندسة</option><option value="المبيعات">المبيعات</option><option value="المحاسبة">المحاسبة</option></select></div>' +
-                  '<div class="fg"><label>أجر اليومية القياسي (ر.س)</label><input type="number" id="emp_new_salary" value="200"></div>' +
-                '</div>' +
-                '<div class="fr">' +
-                  '<div class="fg"><label>التأمينات الاجتماعية الثابتة (ر.س)</label><input type="number" id="emp_new_insurance" value="40"></div>' +
-                  '<div class="fg"><label>موعد الحضور الافتراضي للشيفت</label><input type="time" id="emp_new_start" value="08:00"></div>' +
-                '</div>' +
-                '<div class="fg"><label>موعد الانصراف الافتراضي للشيفت</label><input type="time" id="emp_new_end" value="17:00"></div>' +
-                '</div>';
-    f.innerHTML='<button class="btn btn-p" onclick="saveNewEmployee()"><i class="fas fa-save"></i> حفظ الموظف والوردية</button><button class="btn btn-s" onclick="closeMod()">إلغاء</button>';
-  }
-  openModal();
-}
-
-function saveNewEmployee() {
-  var name = document.getElementById('emp_new_name').value.trim();
-  var pos = document.getElementById('emp_new_pos').value.trim();
-  var dept = document.getElementById('emp_new_dept').value;
-  var salary = parseFloat(document.getElementById('emp_new_salary').value)||200;
-  var ins = parseFloat(document.getElementById('emp_new_insurance').value)||40;
-  var start = document.getElementById('emp_new_start').value;
-  var end = document.getElementById('emp_new_end').value;
-
-  if(!name){ toast('يجب إدخال اسم الموظف', 'er'); return; }
-
-  DB.employees.push({
-    id: 'E-' + (DB.employees.length + 1),
-    name: name,
-    position: pos,
-    dept: dept,
-    salary: salary,
-    status: 'نشط',
-    insurance: ins,
-    shiftStart: start,
-    shiftEnd: end
-  });
-
-  closeMod();
-  renderAll(); autoSaveAll();
-  toast('تمت إضافة الموظف وضبط وردية عمله بنجاح', 'ok');
-  logActivity('إضافة موظف', 'تسجيل ' + name + ' باليومية وبمواعيد وردية مخصصة', 'hr');
-}
-
-function saveNewAtt() {
-  var name = document.getElementById('att_emp_name').value;
-  var time = document.getElementById('att_time').value;
-  var date = document.getElementById('att_date').value;
-  var perm = document.getElementById('att_late_perm').checked;
-  DB.attendance.push({ id:'A-'+(DB.attendance.length+1), empName:name, date:date, timeIn:time, timeOut:'', status:'حاضر', latePermission:perm });
-  closeMod();
-  rAtt(); autoSaveAll();
-  toast('تم الحفظ والمزامنة بنجاح', 'ok');
-}
-
-function saveNewClient() {
-  var name = document.getElementById('cl_new_name').value.trim();
-  var phone = document.getElementById('cl_new_phone').value.trim();
-  var city = document.getElementById('cl_new_city').value.trim();
-  var value = parseFloat(document.getElementById('cl_new_value').value)||0;
-  var notes = document.getElementById('cl_new_notes').value.trim();
-  if(!name){ toast('يجب إدخال اسم العميل','er'); return; }
-  var now = new Date().toISOString().split('T')[0];
-  var by = currentUser ? currentUser.name : 'النظام';
-  var newId = 'CL-' + (DB.clients.length + 1);
-  var newClient = {
-    id: newId, name:name, phone:phone, city:city||'الرياض', status:'نشط',
-    stage:'جديد', value:value, notes:notes, createdAt:now, updatedAt:now,
-    stageHistory:[{stage:'جديد',date:now,by:by}]
-  };
-  DB.clients.push(newClient);
-  closeMod(); rClients(); autoSaveAll();
-  toast('تم إضافة العميل '+name+' بنجاح وتم تسجيله بالمرحلة [جديد]','ok');
-  logActivity('إضافة عميل','تسجيل عميل جديد: '+name,'clients');
-  // حفظ في Supabase
-  saveClientToSupabase(newClient, true);
-}
-
-/* ===================== تفعيل أحداث التنقل والتنصت ===================== */
-document.querySelectorAll('#sideNav .sni').forEach(function(n){
-  n.addEventListener('click',function(){
-    var p=n.dataset.p;if(!p)return;
-    if(n.classList.contains('locked')){toast('ليس لديك صلاحية لهذا القسم','er');return}
-    document.querySelectorAll('#sideNav .sni').forEach(function(x){x.classList.remove('on')});n.classList.add('on');
-    document.querySelectorAll('.psec').forEach(function(x){x.classList.remove('on')});
-    var el=document.getElementById('pg-'+p);if(el)el.classList.add('on');
-    var ts={dashboard:'لوحة التحكم',crm:'بوق المبيعات',clients:'العملاء',visits:'الزيارات',leads:'المحتملون',engineering:'الهندسة',production:'الإنتاج',accounts:'الحسابات',suppliers:'الموردين',inventory:'المخازن',hr:'الموظفين',attendance:'الحضور',payroll:'الرواتب',users:'المستخدمين',reports:'التقارير',activity:'سجل النشاط'};
-    document.getElementById('pgT').textContent=ts[p]||p;
-    document.getElementById('sidebar').classList.remove('open');
-  });
-});
-
-window.onload = function() {
-  loadSavedData();
-  document.getElementById('loginScreen').style.display = 'flex';
-  // اختبار الاتصال بـ Supabase في الخلفية
-  _supa.from('users').select('count', {count:'exact',head:true}).then(function(r) {
-    if(!r.error) {
-      var hint = document.querySelector('.login-hint');
-      if(hint) hint.innerHTML = 'DAVID RAMES ERP &copy; 2025 &nbsp;|&nbsp; <span style="color:var(--ok);font-size:8px"><i class="fas fa-circle" style="font-size:5px"></i> Supabase متصل</span>';
-    }
-  });
-};
-</script>
-</body>
-</html>
+  document.getElementById('mBd').innerHTML='<div class="fbox"><h4>بيانات الفرصة</h4><div class="sr"><span class="sl">العميل</span><span>'+c.client+'</span></div><div class="sr"><span class="sl">الحالة الحالية</span><span>'+c.st
